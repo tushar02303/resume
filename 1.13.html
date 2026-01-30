@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajiv Kapoor | Actor | Mumbai</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #b71c1c;
+            --secondary-color: #1a237e;
+            --accent-color: #ff9800;
+            --dark-color: #121212;
+            --light-color: #f5f5f5;
+            --whatsapp-green: #25D366;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* WhatsApp Specific Styles */
+        .whatsapp-btn {
+            background-color: var(--whatsapp-green);
+            border-color: var(--whatsapp-green);
+            color: white;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-icon {
+            background-color: var(--whatsapp-green);
+        }
+        
+        .whatsapp-icon:hover {
+            background-color: #128C7E;
+        }
+        
+        .whatsapp-form-option {
+            background-color: rgba(37, 211, 102, 0.1);
+            border-left: 4px solid var(--whatsapp-green);
+        }
+        
+        .whatsapp-success {
+            background-color: rgba(37, 211, 102, 0.1);
+            border: 1px solid var(--whatsapp-green);
+            color: #128C7E;
+        }
+        
+        /* Rest of the CSS remains the same as previous version */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 65%, rgba(183, 28, 28, 0.1) 65%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            transform-origin: left;
+            animation: lineGrow 1.5s ease-out forwards;
+        }
+        
+        .bg-light-custom {
+            background-color: #f8f9fa;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .btn-primary-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary-custom:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #9c1a1a;
+            border-color: #9c1a1a;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(183, 28, 28, 0.3);
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid white;
+            color: white;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background-color: white;
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        /* ... (rest of your existing CSS styles remain exactly the same) ... */
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll;
+                text-align: center;
+            }
+            
+            .hero-section::before {
+                background: linear-gradient(45deg, transparent 75%, rgba(183, 28, 28, 0.1) 75%);
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                text-align: center;
+            }
+            
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%) scaleX(0);
+                animation: lineGrow 1.5s ease-out forwards;
+            }
+            
+            .actor-image-frame {
+                max-width: 300px;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Navigation (Same as before) -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="#home">Rajiv <span>Kapoor</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stats">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section with WhatsApp Integration -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container py-5">
+            <h2 class="section-title text-center text-white" data-aos="fade-up">Get In Touch</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+                Send me a message directly on WhatsApp or use the contact form below
+            </p>
+            
+            <!-- WhatsApp Direct Message Button -->
+            <div class="row justify-content-center mb-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card bg-dark border-secondary">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-whatsapp fs-1 text-success"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Direct WhatsApp Message</h4>
+                            <p class="card-text mb-4">
+                                Click below to message me directly on WhatsApp. This is the fastest way to get in touch!
+                            </p>
+                            <a href="https://wa.me/7893606850?text=Hi%20Rajiv,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." 
+                               target="_blank" 
+                               class="btn whatsapp-btn btn-lg w-100">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Message on WhatsApp
+                            </a>
+                            <p class="mt-3 text-muted">
+                                <small>Phone: +91 98765 43210</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <h3 class="h2 mb-4">Contact Information</h3>
+                    
+                    <div class="contact-info-item">
+                        <i class="bi bi-geo-alt contact-info-icon"></i>
+                        <div>
+                            <h5 class="fw-bold">Location</h5>
+                            <p class="mb-0">Bandra West, Mumbai 400050<br>Maharashtra, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="bi bi-telephone contact-info-icon"></i>
+                        <div>
+                            <h5 class="fw-bold">Phone & WhatsApp</h5>
+                            <p class="mb-0">+91 98765 43210 (Personal)<br>+91 99876 54321 (Agent)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="bi bi-envelope contact-info-icon"></i>
+                        <div>
+                            <h5 class="fw-bold">Email</h5>
+                            <p class="mb-0">contact@rajivkapoor.com<br>bookings@rajivkapoor.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="bi bi-person-badge contact-info-icon"></i>
+                        <div>
+                            <h5 class="fw-bold">Agent</h5>
+                            <p class="mb-0">Maya Sharma<br>Starlight Talent Agency<br>+91 99876 54321</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <h4 class="h3 mb-4">Connect With Me</h4>
+                        
+                        <div class="d-flex gap-3 mb-4">
+                            <a href="https://facebook.com/rajivkapoor" target="_blank" class="social-icon bg-primary">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://instagram.com/rajivkapoor" target="_blank" class="social-icon bg-danger" style="background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/7893606850" target="_blank" class="social-icon whatsapp-icon">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                            <a href="https://youtube.com/rajivkapoor" target="_blank" class="social-icon bg-danger">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/rajivkapoor" target="_blank" class="social-icon bg-primary">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        
+                        <div>
+                            <p class="mb-1"><strong>Facebook:</strong> facebook.com/rajivkapoor</p>
+                            <p class="mb-1"><strong>Instagram:</strong> instagram.com/rajivkapoor</p>
+                            <p class="mb-1"><strong>WhatsApp:</strong> +91 98765 43210</p>
+                            <p class="mb-0"><strong>YouTube:</strong> youtube.com/rajivkapoor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <h3 class="h2 mb-4">Send a Message</h3>
+                    
+                    <!-- WhatsApp Form Option -->
+                    <div class="alert whatsapp-form-option mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-whatsapp text-success fs-4 me-3"></i>
+                            <div>
+                                <h5 class="mb-1">Prefer WhatsApp?</h5>
+                                <p class="mb-0">Fill this form and we'll send it directly to your WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="whatsappContactForm" class="needs-validation" novalidate>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <label for="whatsappName" class="form-label">Your Name *</label>
+                                <input type="text" class="form-control bg-dark text-white border-secondary" 
+                                       id="whatsappName" 
+                                       placeholder="Enter your full name" 
+                                       required>
+                                <div class="invalid-feedback">
+                                    Please provide your name.
+                                </div>
+                            </div>
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <label for="whatsappPhone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control bg-dark text-white border-secondary" 
+                                       id="whatsappPhone" 
+                                       placeholder="+91 98765 43210" 
+                                       required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid phone number.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3" data-aos="fade-up" data-aos-delay="300">
+                            <label for="whatsappEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control bg-dark text-white border-secondary" 
+                                   id="whatsappEmail" 
+                                   placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div class="mb-3" data-aos="fade-up" data-aos-delay="400">
+                            <label for="whatsappSubject" class="form-label">Inquiry Type *</label>
+                            <select class="form-select bg-dark text-white border-secondary" 
+                                    id="whatsappSubject" 
+                                    required>
+                                <option value="">Select inquiry type</option>
+                                <option value="Casting Inquiry">Casting Inquiry</option>
+                                <option value="Project Collaboration">Project Collaboration</option>
+                                <option value="Event Invitation">Event Invitation</option>
+                                <option value="Brand Endorsement">Brand Endorsement</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select an inquiry type.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4" data-aos="fade-up" data-aos-delay="500">
+                            <label for="whatsappMessage" class="form-label">Message *</label>
+                            <textarea class="form-control bg-dark text-white border-secondary" 
+                                      id="whatsappMessage" 
+                                      rows="5" 
+                                      placeholder="Describe your project or inquiry in detail..." 
+                                      required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter your message.
+                            </div>
+                        </div>
+                        
+                        <!-- WhatsApp Number Selection -->
+                        <div class="mb-4" data-aos="fade-up" data-aos-delay="600">
+                            <label class="form-label">Send to:</label>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="whatsappNumber" 
+                                       id="whatsappPersonal" value="7893606850" checked>
+                                <label class="form-check-label" for="whatsappPersonal">
+                                    My Personal WhatsApp (+91 98765 43210)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="whatsappNumber" 
+                                       id="whatsappAgent" value="919987654321">
+                                <label class="form-check-label" for="whatsappAgent">
+                                    My Agent's WhatsApp (+91 99876 54321)
+                                </label>
+                            </div>7893606850
+                        </div>
+                        
+                        <button type="submit" class="btn whatsapp-btn w-100 py-3" data-aos="fade-up" data-aos-delay="700">
+                            <i class="bi bi-whatsapp me-2"></i>
+                            Send via WhatsApp
+                        </button>
+                        
+                        <p class="text-center mt-3 text-muted">
+                            <small>By clicking send, you'll be redirected to WhatsApp with your message</small>
+                        </p>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="whatsappSuccess" class="alert whatsapp-success d-none mt-4" role="alert">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                            <div>
+                                <h5 class="mb-1">Ready to Send!</h5>
+                                <p class="mb-0" id="successMessage">Your message has been prepared. You'll be redirected to WhatsApp to send it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as before) -->
+    <footer class="bg-black text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-3 mb-md-0" data-aos="fade-right">
+                    <div class="logo-text">Rajiv <span>Kapoor</span></div>
+                    <p class="mb-0 mt-2">Actor | Model | Director | Mumbai</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0" data-aos="fade-up">
+                    <p class="mb-0">&copy; 2023 Rajiv Kapoor. All rights reserved.</p>
+                    <p class="mb-0">Designed for casting directors and industry professionals</p>
+                </div>
+                <div class="col-md-4 text-md-end" data-aos="fade-left">
+                    <a href="#home" class="text-white text-decoration-none">
+                        <i class="bi bi-arrow-up-circle fs-4"></i> Back to Top
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // WhatsApp Form Submission
+        document.getElementById('whatsappContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!this.checkValidity()) {
+                e.stopPropagation();
+                this.classList.add('was-validated');
+                return;
+            }
+            
+            // Get form values
+            const name = document.getElementById('whatsappName').value;
+            const phone = document.getElementById('whatsappPhone').value;
+            const email = document.getElementById('whatsappEmail').value;
+            const subject = document.getElementById('whatsappSubject').value;
+            const message = document.getElementById('whatsappMessage').value;
+            const whatsappNumber = document.querySelector('input[name="whatsappNumber"]:checked').value;
+            
+            // Format the WhatsApp message
+            let whatsappMessage = `*New Contact Form Submission*\n\n`;
+            whatsappMessage += `*Name:* ${name}\n`;
+            whatsappMessage += `*Phone:* ${phone}\n`;
+            if (email) whatsappMessage += `*Email:* ${email}\n`;
+            whatsappMessage += `*Inquiry Type:* ${subject}\n\n`;
+            whatsappMessage += `*Message:*\n${message}\n\n`;
+            whatsappMessage += `---\n_Sent via Rajiv Kapoor Portfolio Website_`;
+            
+            // URL encode the message
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Show success message
+            const successDiv = document.getElementById('whatsappSuccess');
+            const successMsg = document.getElementById('successMessage');
+            
+            successMsg.textContent = `Your message to ${whatsappNumber === '7893606850' ? 'Rajiv Kapoor' : 'Agent'} has been prepared. You'll be redirected to WhatsApp in 3 seconds...`;
+            successDiv.classList.remove('d-none');
+            successDiv.classList.add('animated', 'fadeIn');
+            
+            // Scroll to success message
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Change button state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="bi bi-whatsapp me-2"></i> Preparing WhatsApp...';
+            submitBtn.disabled = true;
+            
+            // Redirect to WhatsApp after 3 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                window.open(whatsappURL, '_blank');
+            }, 3000);
+        });
+        
+        // Phone number formatting
+        document.getElementById('whatsappPhone').addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            
+            if (value.length > 0) {
+                // Format as Indian number
+                if (value.length <= 10) {
+                    value = value.replace(/(\d{5})(\d{5})/, '$1 $2');
+                }
+                // Add country code for India
+                if (!value.startsWith('91') && value.length === 10) {
+                    value = '91 ' + value;
+                }
+            }
+            
+            this.value = value;
+        });
+        
+        // Direct WhatsApp button click tracking
+        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                const buttonType = this.classList.contains('whatsapp-btn') ? 'Direct Button' : 'Social Icon';
+                console.log(`WhatsApp ${buttonType} clicked: ${this.href}`);
+                // You can add analytics here
+            });
+        });
+        
+        // Auto-detect WhatsApp
+        function detectWhatsApp() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+            
+            if (isMobile) {
+                // On mobile, use regular WhatsApp links
+                whatsappLinks.forEach(link => {
+                    link.href = link.href.replace('https://wa.me/', 'whatsapp://send/?phone=');
+                });
+            }
+        }
+        
+        // Run detection on page load
+        window.addEventListener('load', detectWhatsApp);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
